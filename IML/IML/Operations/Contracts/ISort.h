@@ -8,6 +8,7 @@ class ISort : public IOperation
 {
 public: 
 	virtual std::string toString() = 0;
+	
 	virtual std::vector<double> execute() = 0;
 };
 #endif // !_ISORT_H

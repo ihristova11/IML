@@ -139,19 +139,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Operations\AggregateAvg.cpp" />
+    <ClCompile Include="Operations\AggregateFst.cpp" />
+    <ClCompile Include="Operations\AggregateLst.cpp" />
+    <ClCompile Include="Operations\AggregateProd.cpp" />
+    <ClCompile Include="Operations\AggregateSum.cpp" />
     <ClCompile Include="Operations\MapInc.cpp" />
     <ClCompile Include="Operations\MapMlt.cpp" />
+    <ClCompile Include="Operations\SortDst.cpp" />
+    <ClCompile Include="Operations\SortSlc.cpp" />
+    <ClCompile Include="Operations\SortOrd.cpp" />
+    <ClCompile Include="Operations\SortRev.cpp" />
     <ClCompile Include="Startup.cpp" />
     <ClCompile Include="Utils\Parser.cpp" />
     <ClCompile Include="Utils\Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Operations\AggregateAvg.h" />
+    <ClInclude Include="Operations\AggregateFst.h" />
+    <ClInclude Include="Operations\AggregateLst.h" />
+    <ClInclude Include="Operations\AggregateProd.h" />
+    <ClInclude Include="Operations\AggregateSum.h" />
     <ClInclude Include="Operations\Contracts\IAggregate.h" />
     <ClInclude Include="Operations\Contracts\IMap.h" />
     <ClInclude Include="Operations\Contracts\IOperation.h" />
     <ClInclude Include="Operations\Contracts\ISort.h" />
     <ClInclude Include="Operations\MapInc.h" />
     <ClInclude Include="Operations\MapMlt.h" />
+    <ClInclude Include="Operations\SortDst.h" />
+    <ClInclude Include="Operations\SortSlc.h" />
+    <ClInclude Include="Operations\SortOrd.h" />
+    <ClInclude Include="Operations\SortRev.h" />
     <ClInclude Include="Utils\Constants.h" />
     <ClInclude Include="Utils\Parser.h" />
     <ClInclude Include="Utils\Validator.h" />
