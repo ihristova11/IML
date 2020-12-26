@@ -4,6 +4,9 @@
 #include "IOperation.h"
 #include <vector>
 
+/// <summary>
+/// ISort interface exposing common functionality across different sorting operations.
+/// </summary>
 class ISort : public IOperation
 {
 public: 

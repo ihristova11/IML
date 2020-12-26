@@ -3,6 +3,9 @@
 
 #include "IOperation.h"
 
+/// <summary>
+/// IAggregate interface exposing common functionality across different aggregation operations.
+/// </summary>
 class IAggregate : public IOperation
 {
 public: 

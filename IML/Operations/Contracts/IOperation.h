@@ -3,6 +3,9 @@
 
 #include <string>
 
+/// <summary>
+/// IOperation interface exposing common functionality across different operations.
+/// </summary>
 class IOperation
 {
 public: 

@@ -4,6 +4,9 @@
 #include "IOperation.h"
 #include <vector>
 
+/// <summary>
+/// IMap interface exposing common functionality across different mapping operations.
+/// </summary>
 class IMap : public IOperation
 {
 public:
