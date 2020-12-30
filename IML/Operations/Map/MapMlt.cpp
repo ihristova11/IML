@@ -1,6 +1,6 @@
 #include "MapMlt.h"
 
-std::vector<double> MapMlt::execute()
+std::vector<double> MapMlt::execute(OperationParam param)
 {
     return std::vector<double>();
 }

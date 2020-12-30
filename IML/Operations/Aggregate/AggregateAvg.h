@@ -6,9 +6,9 @@
 class AggregateAvg : public IAggregate
 {
 public:
-	virtual std::string toString() override;
+	virtual double execute(OperationParam param) override;
 
-	virtual double execute() override;
+	virtual std::string toString() override;
 };
 #endif // !_AGGREGATE_AVG_H
 

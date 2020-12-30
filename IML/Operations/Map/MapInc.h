@@ -6,7 +6,7 @@
 class MapInc : public IMap
 {
 public:
-	virtual std::vector<double> execute() override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

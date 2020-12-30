@@ -57,6 +57,9 @@
     <ClCompile Include="Operations\Sort\SortSlc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Operations\OperationParam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Constants.h">
@@ -111,6 +114,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operations\Sort\SortSlc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations\OperationParam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

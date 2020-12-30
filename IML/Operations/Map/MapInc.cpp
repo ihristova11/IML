@@ -1,6 +1,6 @@
 #include "MapInc.h"
 
-std::vector<double> MapInc::execute()
+std::vector<double> MapInc::execute(OperationParam param)
 {
     return std::vector<double>();
 }

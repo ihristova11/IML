@@ -146,6 +146,7 @@
     <ClCompile Include="Operations\Aggregate\AggregateSum.cpp" />
     <ClCompile Include="Operations\Map\MapInc.cpp" />
     <ClCompile Include="Operations\Map\MapMlt.cpp" />
+    <ClCompile Include="Operations\OperationParam.cpp" />
     <ClCompile Include="Operations\Sort\SortDst.cpp" />
     <ClCompile Include="Operations\Sort\SortOrd.cpp" />
     <ClCompile Include="Operations\Sort\SortRev.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Operations\Contracts\ISort.h" />
     <ClInclude Include="Operations\Map\MapInc.h" />
     <ClInclude Include="Operations\Map\MapMlt.h" />
+    <ClInclude Include="Operations\OperationParam.h" />
     <ClInclude Include="Operations\Sort\SortDst.h" />
     <ClInclude Include="Operations\Sort\SortOrd.h" />
     <ClInclude Include="Operations\Sort\SortRev.h" />

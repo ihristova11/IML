@@ -6,9 +6,9 @@
 class AggregateProd : public IAggregate
 {
 public:
+	virtual double execute(OperationParam param) override;
+
 	virtual std::string toString() override;
-	
-	virtual double execute() override;
 };
 #endif // !_AGGREGATE_PROD_H
 

@@ -2,6 +2,8 @@
 #define _IMAP_H
 
 #include "IOperation.h"
+#include "../OperationParam.h"
+
 #include <vector>
 
 /// <summary>
@@ -10,7 +12,7 @@
 class IMap : public IOperation
 {
 public:
-	virtual std::vector<double> execute() = 0;
+	virtual std::vector<double> execute(OperationParam param) = 0;
 
 	virtual std::string toString() = 0;
 };

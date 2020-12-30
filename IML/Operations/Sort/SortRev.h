@@ -6,9 +6,9 @@
 class SortRev : public ISort
 {
 public:
+	virtual std::vector<double> execute(OperationParam param) override;
+
 	virtual std::string toString() override;
-	
-	virtual std::vector<double> execute() override;
 };
 
 #endif // !_SORT_REV_H

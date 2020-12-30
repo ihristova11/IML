@@ -6,9 +6,9 @@
 class SortSlc : public ISort
 {
 public: 
-	virtual std::string toString() override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
-	virtual std::vector<double> execute() override;
+	virtual std::string toString() override;
 };
 
 #endif // !_SORT_LSC
