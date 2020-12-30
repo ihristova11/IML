@@ -1,7 +1,7 @@
 #ifndef _SORT_LSC
 #define _SORT_LSC
 
-#include "Contracts/ISort.h"
+#include "../Contracts/ISort.h"
 
 class SortSlc : public ISort
 {

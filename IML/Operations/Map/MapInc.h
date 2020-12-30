@@ -1,7 +1,7 @@
 #ifndef _MAP_INC_H
 #define _MAP_INC_H
 
-#include "Contracts/IMap.h"
+#include "../Contracts/IMap.h"
 
 class MapInc : public IMap
 {

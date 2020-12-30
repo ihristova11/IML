@@ -24,37 +24,37 @@
     <ClCompile Include="Utils\Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\MapInc.cpp">
+    <ClCompile Include="Operations\Aggregate\AggregateAvg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\MapMlt.cpp">
+    <ClCompile Include="Operations\Aggregate\AggregateFst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\AggregateSum.cpp">
+    <ClCompile Include="Operations\Aggregate\AggregateLst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\AggregateFst.cpp">
+    <ClCompile Include="Operations\Aggregate\AggregateProd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\AggregateProd.cpp">
+    <ClCompile Include="Operations\Aggregate\AggregateSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\AggregateAvg.cpp">
+    <ClCompile Include="Operations\Map\MapInc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\AggregateLst.cpp">
+    <ClCompile Include="Operations\Map\MapMlt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\SortOrd.cpp">
+    <ClCompile Include="Operations\Sort\SortDst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\SortRev.cpp">
+    <ClCompile Include="Operations\Sort\SortOrd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\SortDst.cpp">
+    <ClCompile Include="Operations\Sort\SortRev.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Operations\SortSlc.cpp">
+    <ClCompile Include="Operations\Sort\SortSlc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,12 +66,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations\MapInc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations\MapMlt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operations\Contracts\IAggregate.h">
@@ -86,31 +80,37 @@
     <ClInclude Include="Operations\Contracts\ISort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\AggregateSum.h">
+    <ClInclude Include="Operations\Aggregate\AggregateAvg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\AggregateProd.h">
+    <ClInclude Include="Operations\Aggregate\AggregateFst.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\AggregateAvg.h">
+    <ClInclude Include="Operations\Aggregate\AggregateLst.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\AggregateFst.h">
+    <ClInclude Include="Operations\Aggregate\AggregateProd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\AggregateLst.h">
+    <ClInclude Include="Operations\Aggregate\AggregateSum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\SortRev.h">
+    <ClInclude Include="Operations\Map\MapInc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\SortOrd.h">
+    <ClInclude Include="Operations\Map\MapMlt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\SortDst.h">
+    <ClInclude Include="Operations\Sort\SortDst.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\SortSlc.h">
+    <ClInclude Include="Operations\Sort\SortOrd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations\Sort\SortRev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations\Sort\SortSlc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

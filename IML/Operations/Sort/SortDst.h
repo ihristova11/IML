@@ -1,7 +1,7 @@
 #ifndef _SORT_DST_H
 #define _SORT_DST_H
 
-#include "Contracts/ISort.h"
+#include "../Contracts/ISort.h"
 
 class SortDst : public ISort
 {

@@ -1,7 +1,7 @@
 #ifndef _AGGREGATE_LST_H
 #define _AGGREGATE_LST_H
 
-#include "Contracts/IAggregate.h"
+#include "../Contracts/IAggregate.h"
 
 class AggregateLst : public IAggregate
 {

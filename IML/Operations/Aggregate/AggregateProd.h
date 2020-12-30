@@ -1,7 +1,7 @@
 #ifndef _AGGREGATE_PROD_H
 #define _AGGREGATE_PROD_H
 
-#include "Contracts/IAggregate.h"
+#include "../Contracts/IAggregate.h"
 
 class AggregateProd : public IAggregate
 {

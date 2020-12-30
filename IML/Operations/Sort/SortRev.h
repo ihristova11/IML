@@ -1,7 +1,7 @@
 #ifndef _SORT_REV_H
 #define _SORT_REV_H
 
-#include "Contracts/ISort.h"
+#include "../Contracts/ISort.h"
 
 class SortRev : public ISort
 {

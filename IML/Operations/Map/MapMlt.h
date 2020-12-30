@@ -1,7 +1,7 @@
 #ifndef _MAP_MLT_H
 #define _MAP_MLT_H
 
-#include "Contracts/IMap.h"
+#include "../Contracts/IMap.h"
 
 class MapMlt : public IMap
 {
