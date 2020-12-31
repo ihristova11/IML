@@ -2,7 +2,7 @@
 
 double AggregateLst::execute(OperationParam param)
 {
-    return 0.0;
+    return param.getArguments().back();
 }
 
 std::string AggregateLst::toString()

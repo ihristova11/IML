@@ -2,7 +2,13 @@
 
 double AggregateProd::execute(OperationParam param)
 {
-    return 0.0;
+	double prod = 1;
+	for (double val : param.getArguments())
+	{
+		prod *= val;
+	}
+
+	return prod;
 }
 
 std::string AggregateProd::toString()
