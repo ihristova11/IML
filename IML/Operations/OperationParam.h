@@ -10,7 +10,7 @@
 class OperationParam
 {
 public:
-	OperationParam(std::string name, std::vector<double> args, std::vector<double> attributes);
+	OperationParam(std::string name, std::vector<double> args, std::vector<std::string> attributes);
 
 	/// <summary>
 	/// returns the operation name
@@ -28,12 +28,12 @@ public:
 	/// returns the operation attributes
 	/// </summary>
 	/// <returns>std::vector<double></returns>
-	std::vector<double> getAttributes() const;
+	std::vector<std::string> getAttributes() const;
 
 private:
 	std::string operationName; // todo: delete if not needed
 	std::vector<double> arguments; // todo: check if name is valid?
-	std::vector<double> attributes;
+	std::vector<std::string> attributes;
 };
 
 #endif // !_OPERATION_PARAM_H
