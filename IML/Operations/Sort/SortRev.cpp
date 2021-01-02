@@ -1,4 +1,6 @@
 #include "SortRev.h"
+#include "../../Utils/Constants.h"
+
 #include <stack>
 
 std::vector<double> SortRev::execute(OperationParam param)
@@ -16,5 +18,5 @@ std::vector<double> SortRev::execute(OperationParam param)
 
 std::string SortRev::toString()
 {
-    return std::string();
+    return Constants::ReverseCommandName;
 }

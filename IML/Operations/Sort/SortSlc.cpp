@@ -1,4 +1,5 @@
 #include "SortSlc.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> SortSlc::execute(OperationParam param)
 {
@@ -11,11 +12,11 @@ std::vector<double> SortSlc::execute(OperationParam param)
         res.push_back(args[i]);
     }
 
-    return res; // return empty if index is out of range
+    return res;
 }
 
 std::string SortSlc::toString()
 {
-    return std::string();
+    return Constants::SubListCommandName;
 }
 

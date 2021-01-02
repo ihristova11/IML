@@ -1,4 +1,5 @@
 #include "AggregateProd.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> AggregateProd::execute(OperationParam param)
 {
@@ -13,6 +14,6 @@ std::vector<double> AggregateProd::execute(OperationParam param)
 
 std::string AggregateProd::toString()
 {
-    return std::string();
+	return Constants::AggregateProductCommandName;
 }
 

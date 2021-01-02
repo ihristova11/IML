@@ -1,4 +1,5 @@
 #include "AggregateFst.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> AggregateFst::execute(OperationParam param)
 {
@@ -7,5 +8,5 @@ std::vector<double> AggregateFst::execute(OperationParam param)
 
 std::string AggregateFst::toString()
 {
-    return std::string();
+    return Constants::AggregateFirstCommandName;
 }

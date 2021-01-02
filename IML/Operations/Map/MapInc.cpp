@@ -1,4 +1,5 @@
 #include "MapInc.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> MapInc::execute(OperationParam param)
 {
@@ -13,5 +14,5 @@ std::vector<double> MapInc::execute(OperationParam param)
 
 std::string MapInc::toString()
 {
-    return std::string();
+	return Constants::MapIncrementCommandName;
 }

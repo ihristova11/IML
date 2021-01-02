@@ -1,4 +1,6 @@
 #include "SortDst.h"
+#include "../../Utils/Constants.h"
+
 #include <set>
 
 std::vector<double> SortDst::execute(OperationParam param)
@@ -12,5 +14,5 @@ std::vector<double> SortDst::execute(OperationParam param)
 
 std::string SortDst::toString()
 {
-    return std::string();
+    return Constants::RemoveDuplicatesCommandName;
 }

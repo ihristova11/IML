@@ -1,4 +1,5 @@
 #include "AggregateLst.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> AggregateLst::execute(OperationParam param)
 {
@@ -7,6 +8,6 @@ std::vector<double> AggregateLst::execute(OperationParam param)
 
 std::string AggregateLst::toString()
 {
-	return std::string();
+	return Constants::AggregateLastCommandName;
 }
 

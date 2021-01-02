@@ -115,8 +115,9 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 		{
 			// check the last one on the stack 
 			IOperation* top = store.top();
-			IOperation* current = retrieveOperationFromString(last[i]);
-			if (top != current)
+			std::string closing = last[i].substr(1);
+			IOperation* current = retrieveOperationFromString(closing);
+			if (top->toString() != current->toString())
 			{
 				throw "Not matching tags!";
 			}
@@ -233,30 +234,14 @@ bool Parser::isNatural(std::string& str)
 
 bool Parser::isAttribute(std::string& str, std::string& op)
 {
-	if (str.front() == '"' && str.back() == '"') // is it possible to be whitespace? should we trim before that?
+	if (str.front() == '"' && str.back() == '"')
 	{
-		if (op == Constants::MapIncrementCommandName && isDouble(str))
-		{
-			// receives doubles
-		}
-		else if (op == Constants::MapMultiplyCommandName && isDouble(str))
-		{
-			// receives doubles
-		}
-		else if (op == Constants::OrderCommandName && (str == "ASC" || str == "DSC"))
-		{
-			//values should be "ASC" or "DSC"
-		}
-		else if (op == Constants::SubListCommandName && isNatural(str))
-		{
-			// expecting an index
-		}
-		else
-		{
-			throw "Invalid operation parameters!";
-		}
+		std::string retrieved = str.substr(1, str.size() - 2);
+		return ((op == Constants::MapIncrementCommandName && isDouble(retrieved))
+			|| (op == Constants::MapMultiplyCommandName && isDouble(retrieved))
+			|| (op == Constants::OrderCommandName && (str == "ASC" || str == "DSC"))
+			|| (op == Constants::SubListCommandName && isNatural(retrieved)));
 	}
-
 	return false;
 }
 

@@ -1,4 +1,5 @@
 #include "AggregateAvg.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> AggregateAvg::execute(OperationParam param)
 {
@@ -13,6 +14,6 @@ std::vector<double> AggregateAvg::execute(OperationParam param)
 
 std::string AggregateAvg::toString()
 {
-    return std::string();
+	return Constants::AggregateAverageCommandName;
 }
 

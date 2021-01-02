@@ -1,4 +1,5 @@
 #include "SortOrd.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> SortOrd::execute(OperationParam param)
 {
@@ -16,7 +17,7 @@ std::vector<double> SortOrd::execute(OperationParam param)
 
 std::string SortOrd::toString()
 {
-	return std::string();
+	return Constants::OrderCommandName;
 }
 
 std::vector<double> SortOrd::sort(std::vector<double>& v, bool asc)

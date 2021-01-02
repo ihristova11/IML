@@ -1,4 +1,5 @@
 #include "AggregateSum.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> AggregateSum::execute(OperationParam param)
 {
@@ -13,6 +14,6 @@ std::vector<double> AggregateSum::execute(OperationParam param)
 
 std::string AggregateSum::toString()
 {
-    return std::string();
+	return Constants::AggregateSumCommandName;
 }
 

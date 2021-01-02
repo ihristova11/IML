@@ -1,4 +1,5 @@
 #include "MapMlt.h"
+#include "../../Utils/Constants.h"
 
 std::vector<double> MapMlt::execute(OperationParam param)
 {
@@ -13,5 +14,5 @@ std::vector<double> MapMlt::execute(OperationParam param)
 
 std::string MapMlt::toString()
 {
-    return std::string();
+	return Constants::MapMultiplyCommandName;
 }
