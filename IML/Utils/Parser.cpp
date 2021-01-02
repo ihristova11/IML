@@ -109,14 +109,22 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 		else if (isClosingOperation(spaceSplit[i]))
 		{
 			IOperation* top = store.top().first;
+			OperationParam* param = store.top().second;
 			std::string closing = spaceSplit[i].substr(1);
 			IOperation* current = retrieveOperationFromString(closing);
 			if (top->toString() != current->toString())
 			{
+				while(!store.empty())
+				{
+					param = store.top().second;
+					delete param;
+					store.pop();
+				}
 				throw (SyntaxException("Not matching tags!", -12, -34));
 			}
 
-			result = top->execute(*(store.top().second));
+			result = top->execute(*param);
+			delete param;
 			store.pop();
 
 			if (!store.empty())
@@ -163,7 +171,7 @@ IOperation* Parser::retrieveOperationFromString(std::string& str)
 
 Parser::~Parser()
 {
-	// todo : dealloc all operations
+	this->deleteOperations();
 }
 
 std::vector<std::string> Parser::split(std::string str, char symbol)
@@ -248,7 +256,7 @@ bool Parser::isOperation(std::string& str)
 {
 	for (IOperation* op : this->operations)
 	{
-		if (op->toString() == str)
+		if (op != nullptr && op->toString() == str)
 		{
 			return true;
 		}
@@ -258,7 +266,6 @@ bool Parser::isOperation(std::string& str)
 
 bool Parser::isClosingOperation(std::string& str)
 {
-	// starts with / and is valid operation name
 	if (str.length() > 0)
 	{
 		std::string sub = str.substr(1);
@@ -288,4 +295,12 @@ void Parser::seedOperations()
 	this->operations.push_back(new SortOrd());
 	this->operations.push_back(new SortRev());
 	this->operations.push_back(new SortSlc());
+}
+
+void Parser::deleteOperations()
+{
+	for (IOperation* op : operations)
+	{
+		delete op;
+	}
 }

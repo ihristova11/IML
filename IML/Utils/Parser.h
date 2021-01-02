@@ -40,6 +40,8 @@ private:
 	bool isNewline(std::string& str);
 
 	void seedOperations();
+
+	void deleteOperations();
 };
 #endif // !_PARSER_H
 
