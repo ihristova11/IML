@@ -129,7 +129,7 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 				}
 			}
 		}
-		else if (i > 1 && isAttribute(last[i], last[i - 1]))
+		else if (i > 0 && isAttribute(last[i], last[i - 1]))
 		{
 			store.top().second->addAttr(last[i].substr(1, last[i].size() - 2));
 		}
@@ -236,7 +236,7 @@ bool Parser::isAttribute(std::string& str, std::string& op)
 		std::string retrieved = str.substr(1, str.size() - 2);
 		return ((op == Constants::MapIncrementCommandName && isDouble(retrieved))
 			|| (op == Constants::MapMultiplyCommandName && isDouble(retrieved))
-			|| (op == Constants::OrderCommandName && (str == "ASC" || str == "DSC"))
+			|| (op == Constants::OrderCommandName && (retrieved == "ASC" || retrieved == "DSC"))
 			|| (op == Constants::SubListCommandName && isNatural(retrieved)));
 	}
 	return false;
