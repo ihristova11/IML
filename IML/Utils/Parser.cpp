@@ -1,5 +1,7 @@
 #include "Parser.h"
 #include "Constants.h"
+#include "../Operations/Contracts/IOperation.h"
+#include "../Operations/Map/MapInc.h"
 
 #include <string>
 #include <vector>
@@ -7,22 +9,22 @@
 #include <iostream>
 #include <sstream>
 
-std::vector<IOperation> Parser::parse(std::ifstream& ifs)
+std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 {
+	// todo: where should we clear memory?
 	std::string temp;
 	std::vector<std::string> operations;
 
 	while (std::getline(ifs, temp, '<'))
 	{
 		operations.push_back(temp);
-
-		std::cout << temp << std::endl;
 	}
-	std::cout << "------------------------" << std::endl;
+
 	if (!startsWithOpeningBracket(operations))
 	{
 		throw "Ivalid syntax! Expression does not start with an opening bracket!";
 	}
+
 	int openingBracketsNumber = operations.size() - 1;
 	int closingBracketsNumber = 0;
 	for (std::string element : operations)
@@ -45,26 +47,22 @@ std::vector<IOperation> Parser::parse(std::ifstream& ifs)
 	for (std::string op : operations)
 	{
 		std::vector<std::string> res = split(op, '>');
-		std::cout << " + " << std::endl;
 		for (size_t i = 0; i < res.size(); i++)
 		{
-			std::cout << res[i] << std::endl; // if empty string - skip 
 			lst.push_back(res[i]);
 		}
 	}
-	std::cout << "------------------------" << std::endl;
 
 	std::vector<std::string> last;
 	for (std::string op : lst)
 	{
 		std::vector<std::string> res = split(op, ' ');
-		std::cout << " + " << std::endl;
 		for (size_t i = 0; i < res.size(); i++)
 		{
-			std::cout << res[i] << std::endl;
 			last.push_back(res[i]);
 		}
 	}
+
 	if (!closingBracketsPlacedCorrectly(last))
 	{
 		throw "Invalid syntax! Closing brackets are not placed correctly!";
@@ -97,10 +95,10 @@ std::vector<IOperation> Parser::parse(std::ifstream& ifs)
 			// throw -> its invalid
 		}
 	}
-	return std::vector<IOperation>();
+	return std::vector<IOperation*>();
 }
 
-std::vector<double> Parser::evaluate(std::vector<IOperation> operations)
+std::vector<double> Parser::evaluate(std::vector<IOperation*> operations)
 {
 	return std::vector<double>();
 }
@@ -145,7 +143,7 @@ bool Parser::isDouble(std::string& str)
 		parsed = std::stod(str);
 		isValid = true;
 	}
-	catch (std::exception& ia)
+	catch (std::exception&)
 	{
 		isValid = false;
 	}
@@ -162,7 +160,7 @@ bool Parser::isNatural(std::string& str)
 		parsed = std::stoi(str);
 		isValid = true;
 	}
-	catch (std::exception& ia)
+	catch (std::exception&)
 	{
 		isValid = false;
 	}

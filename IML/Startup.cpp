@@ -7,6 +7,7 @@
 #include "Utils/Validator.h"
 #include "Utils/Constants.h"
 #include "Utils/Parser.h"
+#include "Operations/Contracts/IOperation.h"
 #include <iostream>
 
 int main()
@@ -20,7 +21,8 @@ int main()
 		ifs.open(input);
 
 		Parser parser;
-		parser.parse(ifs);
+		std::vector<IOperation*> result = parser.parse(ifs);
+		parser.evaluate(result);
 
 		ifs.close();
 	}
@@ -31,8 +33,3 @@ int main()
 
 	return 0;
 }
-
-//check with multiple parameters - does the split idea work as expected
-//write some unit tests
-
-//global store -> stores operations with their attr and args

@@ -3,7 +3,7 @@
 
 #include "../Contracts/IMap.h"
 
-class MapInc : public IMap
+class MapInc : public IMap, public IOperation
 {
 public:
 	virtual std::vector<double> execute(OperationParam param) override;

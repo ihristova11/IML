@@ -11,9 +11,9 @@
 class Parser 
 {
 public: 
-	std::vector<IOperation> parse(std::ifstream& ifs);
+	std::vector<IOperation*> parse(std::ifstream& ifs);
 
-	std::vector<double> evaluate(std::vector<IOperation> operations);
+	std::vector<double> evaluate(std::vector<IOperation*> operations);
 private:
 	std::vector<std::string> split(std::string str, char symbol);
 	bool startsWithOpeningBracket(std::vector<std::string>& res);
