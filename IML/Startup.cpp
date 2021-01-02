@@ -2,43 +2,37 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 #include "Utils/Validator.h"
+#include "Utils/Constants.h"
 #include "Utils/Parser.h"
+#include <iostream>
 
 int main()
 {
 	std::string input = "input/input1.txt";
 	std::string output = "output/output1.txt";
 
-	std::ifstream ifs;
-	ifs.open(input);
-	Validator validator;
-	Parser parser;
-
-	std::string temp;
-
-	/*while (ifs)
+	try
 	{
-		ifs >> temp;
-		std::cout << temp << std::endl;
-	}*/
+		std::ifstream ifs;
+		ifs.open(input);
 
-	while (std::getline(ifs, temp, '<'))
-	{
-		std::cout << temp << std::endl;
+		Parser parser;
+		parser.parse(ifs);
+
+		ifs.close();
 	}
-
-	//split by '<' and push to a vector 
-	// work with the vector -> all operations push to a stack (create operation param)
-
-	ifs.close();
-	//bool valid = validator.validateFile(ifs);
-	//if (valid)
-	//{
-	//	// todo: parser.parse();
-	//	parser.parse(ifs);
-	//}
+	catch (std::exception& ia)
+	{
+		std::cout << "Program cannot proceed! " << ia.what() << std::endl;
+	}
 
 	return 0;
 }
+
+//check with multiple parameters - does the split idea work as expected
+//write some unit tests
+
+//global store -> stores operations with their attr and args
