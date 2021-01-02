@@ -7,7 +7,7 @@ std::vector<double> SortSlc::execute(OperationParam param)
     std::vector<double> args = param.getArguments();
     int index = std::stoi(param.getAttributes().front()); // check if exception can be thrown
     
-    for (int i = index; index < args.size(); i++)
+    for (int i = index; i < args.size(); i++)
     {
         res.push_back(args[i]);
     }

@@ -131,7 +131,7 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 		}
 		else if (i > 1 && isAttribute(last[i], last[i - 1]))
 		{
-			store.top().second->addAttr(last[i]);
+			store.top().second->addAttr(last[i].substr(1, last[i].size() - 2));
 		}
 		else if (isDouble(last[i]))
 		{
