@@ -152,8 +152,8 @@
     <ClCompile Include="Operations\Sort\SortRev.cpp" />
     <ClCompile Include="Operations\Sort\SortSlc.cpp" />
     <ClCompile Include="Startup.cpp" />
+    <ClCompile Include="Utils\Exceptions\SyntaxException.cpp" />
     <ClCompile Include="Utils\Parser.cpp" />
-    <ClCompile Include="Utils\Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Operations\Aggregate\AggregateAvg.h" />
@@ -170,8 +170,8 @@
     <ClInclude Include="Operations\Sort\SortRev.h" />
     <ClInclude Include="Operations\Sort\SortSlc.h" />
     <ClInclude Include="Utils\Constants.h" />
+    <ClInclude Include="Utils\Exceptions\SyntaxException.h" />
     <ClInclude Include="Utils\Parser.h" />
-    <ClInclude Include="Utils\Validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

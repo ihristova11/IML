@@ -1,5 +1,6 @@
 #include "Parser.h"
 #include "Constants.h"
+#include "Exceptions/SyntaxException.h"
 
 #pragma region include_operations
 #include "../Operations/Contracts/IOperation.h"
@@ -37,21 +38,21 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 	// todo: where should we clear memory?
 	std::vector<double> result;
 	std::string temp;
-	std::vector<std::string> operations;
+	std::vector<std::string> openingSplit;
 
 	while (std::getline(ifs, temp, '<'))
 	{
-		operations.push_back(temp);
+		openingSplit.push_back(temp);
 	}
 
-	if (!startsWithOpeningBracket(operations))
+	if (!startsWithOpeningBracket(openingSplit))
 	{
-		throw "Ivalid syntax! Expression does not start with an opening bracket!";
+		throw SyntaxException("Ivalid syntax! Expression does not start with an opening bracket!", -12, -34);
 	}
 
-	int openingBracketsNumber = operations.size() - 1;
+	int openingBracketsNumber = openingSplit.size() - 1;
 	int closingBracketsNumber = 0;
-	for (std::string element : operations)
+	for (std::string element : openingSplit)
 	{
 		for (size_t i = 0; i < element.length(); i++)
 		{
@@ -64,32 +65,32 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 
 	if (openingBracketsNumber != closingBracketsNumber)
 	{
-		throw "Invalid syntax! Opening brackets number does not match the closing brackets one!";
+		throw SyntaxException("Invalid syntax! Opening brackets number does not match the closing brackets one!", -12, -34);
 	}
 
-	std::vector<std::string> lst;
-	for (std::string op : operations)
+	std::vector<std::string> closingSplit;
+	for (std::string op : openingSplit)
 	{
 		std::vector<std::string> res = split(op, '>');
 		for (size_t i = 0; i < res.size(); i++)
 		{
-			lst.push_back(res[i]);
+			closingSplit.push_back(res[i]);
 		}
 	}
 
-	std::vector<std::string> last;
-	for (std::string op : lst)
+	std::vector<std::string> spaceSplit;
+	for (std::string op : closingSplit)
 	{
 		std::vector<std::string> res = split(op, ' ');
 		for (size_t i = 0; i < res.size(); i++)
 		{
-			last.push_back(res[i]);
+			spaceSplit.push_back(res[i]);
 		}
 	}
 
-	if (!closingBracketsPlacedCorrectly(last))
+	if (!closingBracketsPlacedCorrectly(spaceSplit))
 	{
-		throw "Invalid syntax! Closing brackets are not placed correctly!";
+		throw SyntaxException("Invalid syntax! Closing brackets are not placed correctly!", -12, -34);
 	}
 
 	std::stack<std::pair<IOperation*, OperationParam*>> store;
@@ -98,22 +99,22 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 	std::vector<std::string> opAttr;
 	std::vector<double> opArgs;
 
-	for (size_t i = 0; i < last.size(); i++)
+	for (size_t i = 0; i < spaceSplit.size(); i++)
 	{
-		if (isOperation(last[i]))
+		if (isOperation(spaceSplit[i]))
 		{
-			IOperation* op = retrieveOperationFromString(last[i]);
+			IOperation* op = retrieveOperationFromString(spaceSplit[i]);
 			store.push(std::make_pair(op, new OperationParam()));
 		}
-		else if (isClosingOperation(last[i]))
+		else if (isClosingOperation(spaceSplit[i]))
 		{
 			// check the last one on the stack 
 			IOperation* top = store.top().first;
-			std::string closing = last[i].substr(1);
+			std::string closing = spaceSplit[i].substr(1);
 			IOperation* current = retrieveOperationFromString(closing);
 			if (top->toString() != current->toString())
 			{
-				throw "Not matching tags!";
+				throw (SyntaxException("Not matching tags!", - 12, -34));
 			}
 
 			// execute operation
@@ -129,17 +130,17 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 				}
 			}
 		}
-		else if (i > 0 && isAttribute(last[i], last[i - 1]))
+		else if (i > 0 && isAttribute(spaceSplit[i], spaceSplit[i - 1]))
 		{
-			store.top().second->addAttr(last[i].substr(1, last[i].size() - 2));
+			store.top().second->addAttr(spaceSplit[i].substr(1, spaceSplit[i].size() - 2));
 		}
-		else if (isDouble(last[i]))
+		else if (isDouble(spaceSplit[i]))
 		{
-			store.top().second->addArg(std::stod(last[i]));
+			store.top().second->addArg(std::stod(spaceSplit[i]));
 		}
 		else
 		{
-			throw "Invalid syntax!";
+			throw SyntaxException("Invalid syntax!", -12, -34);
 		}
 	}
 	return result;

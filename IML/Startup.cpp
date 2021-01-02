@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>
 
-#include "Utils/Validator.h"
 #include "Utils/Constants.h"
 #include "Utils/Parser.h"
 #include "Operations/Contracts/IOperation.h"
@@ -12,8 +11,10 @@
 
 int main()
 {
-	std::string input = "input/input1.txt";
-	std::string output = "output/output1.txt";
+	std::string input;
+	std::string output;
+	std::cout << "Enter input file: "; std::cin >> input;
+	std::cout << "Enter output file: "; std::cin >> output;
 
 	try
 	{
@@ -24,10 +25,20 @@ int main()
 		std::vector<double> result = parser.repl(ifs);
 
 		ifs.close();
+
+		std::ofstream ofs;
+		ofs.open(output);
+		for (double d : result)
+		{
+			ofs << d << " ";
+		}
+		ofs.close();
+
+		std::cout << std::endl << "Success!" << std::endl;
 	}
-	catch (std::exception& ia)
+	catch (std::exception& ex)
 	{
-		std::cout << "Program cannot proceed! " << ia.what() << std::endl;
+		std::cout << std::endl << "Program cannot proceed! " << ex.what() << std::endl;
 	}
 
 	return 0;

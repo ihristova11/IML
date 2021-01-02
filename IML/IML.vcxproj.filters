@@ -18,9 +18,6 @@
     <ClCompile Include="Startup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\Validator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Utils\Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,12 +57,12 @@
     <ClCompile Include="Operations\OperationParam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Exceptions\SyntaxException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Validator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Parser.h">
@@ -108,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operations\Contracts\IOperation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Exceptions\SyntaxException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
