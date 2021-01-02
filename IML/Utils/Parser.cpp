@@ -108,20 +108,17 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 		}
 		else if (isClosingOperation(spaceSplit[i]))
 		{
-			// check the last one on the stack 
 			IOperation* top = store.top().first;
 			std::string closing = spaceSplit[i].substr(1);
 			IOperation* current = retrieveOperationFromString(closing);
 			if (top->toString() != current->toString())
 			{
-				throw (SyntaxException("Not matching tags!", - 12, -34));
+				throw (SyntaxException("Not matching tags!", -12, -34));
 			}
 
-			// execute operation
 			result = top->execute(*(store.top().second));
 			store.pop();
 
-			// update stack with variables
 			if (!store.empty())
 			{
 				for (double arg : result)
@@ -137,6 +134,10 @@ std::vector<double> Parser::repl(std::ifstream& ifs)
 		else if (isDouble(spaceSplit[i]))
 		{
 			store.top().second->addArg(std::stod(spaceSplit[i]));
+		}
+		else if (isNewline(spaceSplit[i]))
+		{
+			continue;
 		}
 		else
 		{
@@ -267,6 +268,11 @@ bool Parser::isClosingOperation(std::string& str)
 	return false;
 }
 
+bool Parser::isNewline(std::string& str)
+{
+	return str.find('\n') != std::string::npos;
+}
+
 void Parser::seedOperations()
 {
 	this->operations.push_back(new MapInc());
@@ -283,4 +289,3 @@ void Parser::seedOperations()
 	this->operations.push_back(new SortRev());
 	this->operations.push_back(new SortSlc());
 }
-

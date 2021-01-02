@@ -37,6 +37,8 @@ private:
 
 	bool isClosingOperation(std::string& str);
 
+	bool isNewline(std::string& str);
+
 	void seedOperations();
 };
 #endif // !_PARSER_H
