@@ -35,7 +35,6 @@ Parser::Parser()
 
 std::vector<double> Parser::repl(std::ifstream& ifs)
 {
-	// todo: where should we clear memory?
 	std::vector<double> result;
 	std::string temp;
 	std::vector<std::string> openingSplit;

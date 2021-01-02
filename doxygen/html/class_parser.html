@@ -69,13 +69,78 @@ $(function() {
 <div class="title">Parser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class parsing the file input and evaluating the result  
+ <a href="class_parser.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_parser_8h_source.html">Parser.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaa2ff3e93db82d989c99f529631bb3ad"><td class="memItemLeft" align="right" valign="top"><a id="aaa2ff3e93db82d989c99f529631bb3ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> (std::ifstream &amp;ifs)</td></tr>
-<tr class="separator:aaa2ff3e93db82d989c99f529631bb3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2db23aecd004aea611579c1ab72f48c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ac2db23aecd004aea611579c1ab72f48c">repl</a> (std::ifstream &amp;ifs)</td></tr>
+<tr class="memdesc:ac2db23aecd004aea611579c1ab72f48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read-eval-print-loop  <a href="class_parser.html#ac2db23aecd004aea611579c1ab72f48c">More...</a><br /></td></tr>
+<tr class="separator:ac2db23aecd004aea611579c1ab72f48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e858b477faa2019ac4fb5b30be7a918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_operation.html">IOperation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a0e858b477faa2019ac4fb5b30be7a918">retrieveOperationFromString</a> (std::string &amp;str)</td></tr>
+<tr class="memdesc:a0e858b477faa2019ac4fb5b30be7a918"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts std::string to IOperation*  <a href="class_parser.html#a0e858b477faa2019ac4fb5b30be7a918">More...</a><br /></td></tr>
+<tr class="separator:a0e858b477faa2019ac4fb5b30be7a918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class parsing the file input and evaluating the result </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac2db23aecd004aea611579c1ab72f48c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2db23aecd004aea611579c1ab72f48c">&#9670;&nbsp;</a></span>repl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; Parser::repl </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>ifs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read-eval-print-loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ifs</td><td>std::ifstream of input file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; with the result</dd></dl>
+
+</div>
+</div>
+<a id="a0e858b477faa2019ac4fb5b30be7a918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e858b477faa2019ac4fb5b30be7a918">&#9670;&nbsp;</a></span>retrieveOperationFromString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_operation.html">IOperation</a> * Parser::retrieveOperationFromString </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>converts std::string to IOperation* </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ifs</td><td>std::ifstream of input file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; with the result</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Git/IML/IML/Utils/<a class="el" href="_parser_8h_source.html">Parser.h</a></li>
 <li>D:/Git/IML/IML/Utils/Parser.cpp</li>

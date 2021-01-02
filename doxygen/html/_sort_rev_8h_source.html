@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IML: D:/Git/IML/IML/Operations/SortRev.h Source File</title>
+<title>IML: D:/Git/IML/IML/Operations/Sort/SortRev.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_e327a85c766a565e1a454661463836af.html">IML</a></li><li class="navelem"><a class="el" href="dir_149beca03120a84e752ecd813d9f8756.html">Operations</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e327a85c766a565e1a454661463836af.html">IML</a></li><li class="navelem"><a class="el" href="dir_149beca03120a84e752ecd813d9f8756.html">Operations</a></li><li class="navelem"><a class="el" href="dir_e90fe1c6f4c7157312671c764772e759.html">Sort</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,21 +73,24 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _SORT_REV_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _SORT_REV_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Contracts/ISort.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../Contracts/IOperation.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_sort_rev.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sort_rev.html">SortRev</a> : <span class="keyword">public</span> <a class="code" href="class_i_sort.html">ISort</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">virtual</span> std::string toString() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;double&gt; execute() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif // !_SORT_REV_H</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_sort_rev.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sort_rev.html">SortRev</a> : <span class="keyword">public</span> <a class="code" href="class_i_operation.html">IOperation</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;double&gt; <a class="code" href="class_sort_rev.html#a24a5d89e1553d86c85d966935c8ee033">execute</a>(<a class="code" href="class_operation_param.html">OperationParam</a> param) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11">toString</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // !_SORT_REV_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_i_sort_html"><div class="ttname"><a href="class_i_sort.html">ISort</a></div><div class="ttdoc">ISort interface exposing common functionality across different sorting operations.</div><div class="ttdef"><b>Definition:</b> ISort.h:11</div></div>
-<div class="ttc" id="aclass_sort_rev_html"><div class="ttname"><a href="class_sort_rev.html">SortRev</a></div><div class="ttdef"><b>Definition:</b> SortRev.h:7</div></div>
+<div class="ttc" id="aclass_sort_rev_html_a160edfbbbca2998e486bb5ff80e33e11"><div class="ttname"><a href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11">SortRev::toString</a></div><div class="ttdeci">virtual std::string toString() override</div><div class="ttdoc">toString() implementation on operation class</div><div class="ttdef"><b>Definition:</b> SortRev.cpp:19</div></div>
+<div class="ttc" id="aclass_operation_param_html"><div class="ttname"><a href="class_operation_param.html">OperationParam</a></div><div class="ttdoc">OperationParam is a class holding values related to Operation</div><div class="ttdef"><b>Definition:</b> OperationParam.h:11</div></div>
+<div class="ttc" id="aclass_i_operation_html"><div class="ttname"><a href="class_i_operation.html">IOperation</a></div><div class="ttdoc">IOperation interface exposing common functionality across different operations.</div><div class="ttdef"><b>Definition:</b> IOperation.h:12</div></div>
+<div class="ttc" id="aclass_sort_rev_html"><div class="ttname"><a href="class_sort_rev.html">SortRev</a></div><div class="ttdoc">An operation reversing a std::vector&lt;double&gt;</div><div class="ttdef"><b>Definition:</b> SortRev.h:10</div></div>
+<div class="ttc" id="aclass_sort_rev_html_a24a5d89e1553d86c85d966935c8ee033"><div class="ttname"><a href="class_sort_rev.html#a24a5d89e1553d86c85d966935c8ee033">SortRev::execute</a></div><div class="ttdeci">virtual std::vector&lt; double &gt; execute(OperationParam param) override</div><div class="ttdoc">contains command specific execution logic</div><div class="ttdef"><b>Definition:</b> SortRev.cpp:6</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

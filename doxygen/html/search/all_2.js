@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['iaggregate_6',['IAggregate',['../class_i_aggregate.html',1,'']]],
-  ['imap_7',['IMap',['../class_i_map.html',1,'']]],
-  ['ioperation_8',['IOperation',['../class_i_operation.html',1,'']]],
-  ['isort_9',['ISort',['../class_i_sort.html',1,'']]]
+  ['execute_7',['execute',['../class_aggregate_avg.html#af00d5a567fd72feabd3ce1130fbca766',1,'AggregateAvg::execute()'],['../class_aggregate_fst.html#a60264991e624f871d179f65abeef6e8d',1,'AggregateFst::execute()'],['../class_aggregate_lst.html#aeaad643efcb82946808a6f2673efe715',1,'AggregateLst::execute()'],['../class_aggregate_prod.html#a95fd165a9d0edb33dde859a996f54522',1,'AggregateProd::execute()'],['../class_aggregate_sum.html#a254f20749779f65cc28e30a31d2aee4d',1,'AggregateSum::execute()'],['../class_i_operation.html#a10ca80e1f983fe7aee73b22b1ddb51c2',1,'IOperation::execute()'],['../class_map_inc.html#abdea6769e656a80d39925d291615e0ec',1,'MapInc::execute()'],['../class_map_mlt.html#a178a6f0634eac16a0b4498a224788c7a',1,'MapMlt::execute()'],['../class_sort_dst.html#a22b8754b9c8695ea585d54d89a775624',1,'SortDst::execute()'],['../class_sort_ord.html#a5275f1180156c4ca610f79529d615784',1,'SortOrd::execute()'],['../class_sort_rev.html#a24a5d89e1553d86c85d966935c8ee033',1,'SortRev::execute()'],['../class_sort_slc.html#ad4b873dca8982b81fb100b701f797c8e',1,'SortSlc::execute()']]]
 ];

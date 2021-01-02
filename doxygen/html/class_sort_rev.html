@@ -69,29 +69,103 @@ $(function() {
 <div class="title">SortRev Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An operation reversing a std::vector&lt;double&gt;  
+ <a href="class_sort_rev.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sort_rev_8h_source.html">SortRev.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SortRev:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_sort_rev.png" usemap="#SortRev_map" alt=""/>
   <map id="SortRev_map" name="SortRev_map">
-<area href="class_i_sort.html" title="ISort interface exposing common functionality across different sorting operations." alt="ISort" shape="rect" coords="0,56,71,80"/>
 <area href="class_i_operation.html" title="IOperation interface exposing common functionality across different operations." alt="IOperation" shape="rect" coords="0,0,71,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a160edfbbbca2998e486bb5ff80e33e11"><td class="memItemLeft" align="right" valign="top"><a id="a160edfbbbca2998e486bb5ff80e33e11"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () override</td></tr>
+<tr class="memitem:a24a5d89e1553d86c85d966935c8ee033"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sort_rev.html#a24a5d89e1553d86c85d966935c8ee033">execute</a> (<a class="el" href="class_operation_param.html">OperationParam</a> param) override</td></tr>
+<tr class="memdesc:a24a5d89e1553d86c85d966935c8ee033"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains command specific execution logic  <a href="class_sort_rev.html#a24a5d89e1553d86c85d966935c8ee033">More...</a><br /></td></tr>
+<tr class="separator:a24a5d89e1553d86c85d966935c8ee033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a160edfbbbca2998e486bb5ff80e33e11"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11">toString</a> () override</td></tr>
+<tr class="memdesc:a160edfbbbca2998e486bb5ff80e33e11"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11" title="toString() implementation on operation class">toString()</a> implementation on operation class  <a href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11">More...</a><br /></td></tr>
 <tr class="separator:a160edfbbbca2998e486bb5ff80e33e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad335a4350f154bdf5f0e8586f2fc1de8"><td class="memItemLeft" align="right" valign="top"><a id="ad335a4350f154bdf5f0e8586f2fc1de8"></a>
-virtual std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> () override</td></tr>
-<tr class="separator:ad335a4350f154bdf5f0e8586f2fc1de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An operation reversing a std::vector&lt;double&gt; </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a24a5d89e1553d86c85d966935c8ee033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a5d89e1553d86c85d966935c8ee033">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; SortRev::execute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_operation_param.html">OperationParam</a>&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>contains command specific execution logic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td><a class="el" href="class_operation_param.html" title="OperationParam is a class holding values related to Operation">OperationParam</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; with the execution result</dd></dl>
+
+<p>Implements <a class="el" href="class_i_operation.html#a10ca80e1f983fe7aee73b22b1ddb51c2">IOperation</a>.</p>
+
+</div>
+</div>
+<a id="a160edfbbbca2998e486bb5ff80e33e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a160edfbbbca2998e486bb5ff80e33e11">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SortRev::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_sort_rev.html#a160edfbbbca2998e486bb5ff80e33e11" title="toString() implementation on operation class">toString()</a> implementation on operation class </p>
+<dl class="section return"><dt>Returns</dt><dd>the operation name</dd></dl>
+
+<p>Implements <a class="el" href="class_i_operation.html#ac8e6346f9d3183492ba11f55af9a0931">IOperation</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Git/IML/IML/Operations/<a class="el" href="_sort_rev_8h_source.html">SortRev.h</a></li>
-<li>D:/Git/IML/IML/Operations/SortRev.cpp</li>
+<li>D:/Git/IML/IML/Operations/Sort/<a class="el" href="_sort_rev_8h_source.html">SortRev.h</a></li>
+<li>D:/Git/IML/IML/Operations/Sort/SortRev.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

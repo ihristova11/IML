@@ -69,29 +69,103 @@ $(function() {
 <div class="title">AggregateAvg Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An operation that finds the average of the elements of a std::vector&lt;double&gt;  
+ <a href="class_aggregate_avg.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_aggregate_avg_8h_source.html">AggregateAvg.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AggregateAvg:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_aggregate_avg.png" usemap="#AggregateAvg_map" alt=""/>
   <map id="AggregateAvg_map" name="AggregateAvg_map">
-<area href="class_i_aggregate.html" title="IAggregate interface exposing common functionality across different aggregation operations." alt="IAggregate" shape="rect" coords="0,56,94,80"/>
 <area href="class_i_operation.html" title="IOperation interface exposing common functionality across different operations." alt="IOperation" shape="rect" coords="0,0,94,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7a6f33dfe0afb9c312e231dd1666d92"><td class="memItemLeft" align="right" valign="top"><a id="ac7a6f33dfe0afb9c312e231dd1666d92"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () override</td></tr>
+<tr class="memitem:af00d5a567fd72feabd3ce1130fbca766"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aggregate_avg.html#af00d5a567fd72feabd3ce1130fbca766">execute</a> (<a class="el" href="class_operation_param.html">OperationParam</a> param) override</td></tr>
+<tr class="memdesc:af00d5a567fd72feabd3ce1130fbca766"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains command specific execution logic  <a href="class_aggregate_avg.html#af00d5a567fd72feabd3ce1130fbca766">More...</a><br /></td></tr>
+<tr class="separator:af00d5a567fd72feabd3ce1130fbca766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a6f33dfe0afb9c312e231dd1666d92"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aggregate_avg.html#ac7a6f33dfe0afb9c312e231dd1666d92">toString</a> () override</td></tr>
+<tr class="memdesc:ac7a6f33dfe0afb9c312e231dd1666d92"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_aggregate_avg.html#ac7a6f33dfe0afb9c312e231dd1666d92" title="toString() implementation on operation class">toString()</a> implementation on operation class  <a href="class_aggregate_avg.html#ac7a6f33dfe0afb9c312e231dd1666d92">More...</a><br /></td></tr>
 <tr class="separator:ac7a6f33dfe0afb9c312e231dd1666d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399b48bfb747c6e94da11aba0c3cdf21"><td class="memItemLeft" align="right" valign="top"><a id="a399b48bfb747c6e94da11aba0c3cdf21"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> () override</td></tr>
-<tr class="separator:a399b48bfb747c6e94da11aba0c3cdf21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An operation that finds the average of the elements of a std::vector&lt;double&gt; </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af00d5a567fd72feabd3ce1130fbca766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00d5a567fd72feabd3ce1130fbca766">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; AggregateAvg::execute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_operation_param.html">OperationParam</a>&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>contains command specific execution logic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td><a class="el" href="class_operation_param.html" title="OperationParam is a class holding values related to Operation">OperationParam</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;double&gt; with the execution result</dd></dl>
+
+<p>Implements <a class="el" href="class_i_operation.html#a10ca80e1f983fe7aee73b22b1ddb51c2">IOperation</a>.</p>
+
+</div>
+</div>
+<a id="ac7a6f33dfe0afb9c312e231dd1666d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a6f33dfe0afb9c312e231dd1666d92">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string AggregateAvg::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_aggregate_avg.html#ac7a6f33dfe0afb9c312e231dd1666d92" title="toString() implementation on operation class">toString()</a> implementation on operation class </p>
+<dl class="section return"><dt>Returns</dt><dd>the operation name</dd></dl>
+
+<p>Implements <a class="el" href="class_i_operation.html#ac8e6346f9d3183492ba11f55af9a0931">IOperation</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Git/IML/IML/Operations/<a class="el" href="_aggregate_avg_8h_source.html">AggregateAvg.h</a></li>
-<li>D:/Git/IML/IML/Operations/AggregateAvg.cpp</li>
+<li>D:/Git/IML/IML/Operations/Aggregate/<a class="el" href="_aggregate_avg_8h_source.html">AggregateAvg.h</a></li>
+<li>D:/Git/IML/IML/Operations/Aggregate/AggregateAvg.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
