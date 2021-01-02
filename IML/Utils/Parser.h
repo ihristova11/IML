@@ -13,9 +13,7 @@ class Parser
 public: 
 	Parser();
 
-	std::vector<IOperation*> parse(std::ifstream& ifs);
-
-	std::vector<double> evaluate(std::vector<IOperation*> operations);
+	std::vector<double> repl(std::ifstream& ifs);
 
 	IOperation* retrieveOperationFromString(std::string& str);
 

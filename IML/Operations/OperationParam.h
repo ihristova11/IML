@@ -12,13 +12,7 @@ class OperationParam
 public:
 	OperationParam();
 
-	OperationParam(std::string name, std::vector<double> args, std::vector<std::string> attributes);
-
-	/// <summary>
-	/// returns the operation name
-	/// </summary>
-	/// <returns>std::string</returns>
-	std::string getOperationName() const;
+	OperationParam(std::vector<double> args, std::vector<std::string> attributes);
 
 	/// <summary>
 	/// returns the operation arguments
@@ -32,8 +26,14 @@ public:
 	/// <returns>std::vector<double></returns>
 	std::vector<std::string> getAttributes() const;
 
+	/// <summary>
+	/// adds a new argument to the vector of arguments
+	/// </summary>
+	void addArg(double arg);
+
+	void addAttr(const std::string& attr);
+
 private:
-	std::string operationName; // todo: delete if not needed
 	std::vector<double> arguments; // todo: check if name is valid?
 	std::vector<std::string> attributes;
 };

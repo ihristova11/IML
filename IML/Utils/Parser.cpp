@@ -32,9 +32,10 @@ Parser::Parser()
 	seedOperations();
 }
 
-std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
+std::vector<double> Parser::repl(std::ifstream& ifs)
 {
 	// todo: where should we clear memory?
+	std::vector<double> result;
 	std::string temp;
 	std::vector<std::string> operations;
 
@@ -91,10 +92,8 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 		throw "Invalid syntax! Closing brackets are not placed correctly!";
 	}
 
-	//_______________basic file structure is ok
-	//working with last vector, processing the string entries
+	std::stack<std::pair<IOperation*, OperationParam*>> store;
 
-	std::stack<IOperation*> store;
 	std::string opName;
 	std::vector<std::string> opAttr;
 	std::vector<double> opArgs;
@@ -104,17 +103,12 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 		if (isOperation(last[i]))
 		{
 			IOperation* op = retrieveOperationFromString(last[i]);
-			store.push(op);
-
-			// clear temp values
-			opName = last[i];
-			opArgs.clear();
-			opAttr.clear();
+			store.push(std::make_pair(op, new OperationParam()));
 		}
 		else if (isClosingOperation(last[i]))
 		{
 			// check the last one on the stack 
-			IOperation* top = store.top();
+			IOperation* top = store.top().first;
 			std::string closing = last[i].substr(1);
 			IOperation* current = retrieveOperationFromString(closing);
 			if (top->toString() != current->toString())
@@ -123,29 +117,32 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 			}
 
 			// execute operation
-			top->execute(OperationParam(opName, opArgs, opAttr));
+			result = top->execute(*(store.top().second));
+			store.pop();
 
 			// update stack with variables
+			if (!store.empty())
+			{
+				for (double arg : result)
+				{
+					store.top().second->addArg(arg);
+				}
+			}
 		}
 		else if (i > 1 && isAttribute(last[i], last[i - 1]))
 		{
-			opAttr.push_back(last[i]);
+			store.top().second->addAttr(last[i]);
 		}
 		else if (isDouble(last[i]))
 		{
-			opArgs.push_back(std::stod(last[i]));
+			store.top().second->addArg(std::stod(last[i]));
 		}
 		else
 		{
 			throw "Invalid syntax!";
 		}
 	}
-	return std::vector<IOperation*>();
-}
-
-std::vector<double> Parser::evaluate(std::vector<IOperation*> operations)
-{
-	return std::vector<double>();
+	return result;
 }
 
 IOperation* Parser::retrieveOperationFromString(std::string& str)

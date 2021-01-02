@@ -21,8 +21,7 @@ int main()
 		ifs.open(input);
 
 		Parser parser;
-		std::vector<IOperation*> result = parser.parse(ifs);
-		parser.evaluate(result);
+		std::vector<double> result = parser.repl(ifs);
 
 		ifs.close();
 	}
