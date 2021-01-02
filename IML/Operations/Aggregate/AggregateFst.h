@@ -1,12 +1,12 @@
 #ifndef _AGGREGATE_FST_H
 #define _AGGREGATE_FST_H
 
-#include "../Contracts/IAggregate.h"
+#include "../Contracts/IOperation.h"
 
-class AggregateFst : public IAggregate
+class AggregateFst : public IOperation
 {
 public: 
-	virtual double execute(OperationParam param) override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

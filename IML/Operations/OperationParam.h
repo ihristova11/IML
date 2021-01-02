@@ -10,6 +10,8 @@
 class OperationParam
 {
 public:
+	OperationParam();
+
 	OperationParam(std::string name, std::vector<double> args, std::vector<std::string> attributes);
 
 	/// <summary>

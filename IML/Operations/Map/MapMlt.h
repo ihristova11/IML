@@ -1,9 +1,9 @@
 #ifndef _MAP_MLT_H
 #define _MAP_MLT_H
 
-#include "../Contracts/IMap.h"
+#include "../Contracts/IOperation.h"
 
-class MapMlt : public IMap
+class MapMlt : public IOperation
 {
 public:
 	virtual std::vector<double> execute(OperationParam param) override;

@@ -11,18 +11,35 @@
 class Parser 
 {
 public: 
+	Parser();
+
 	std::vector<IOperation*> parse(std::ifstream& ifs);
 
 	std::vector<double> evaluate(std::vector<IOperation*> operations);
+
+	IOperation* retrieveOperationFromString(std::string& str);
+
+	~Parser();
 private:
+	std::vector<IOperation*> operations;
+
 	std::vector<std::string> split(std::string str, char symbol);
+
 	bool startsWithOpeningBracket(std::vector<std::string>& res);
+
 	bool closingBracketsPlacedCorrectly(std::vector<std::string>& res);
+
 	bool isDouble(std::string& str);
+
 	bool isNatural(std::string& str);
+
 	bool isAttribute(std::string& str, std::string& op);
-	bool isOpeningOperation(std::string& str);
+
+	bool isOperation(std::string& str);
+
 	bool isClosingOperation(std::string& str);
+
+	void seedOperations();
 };
 #endif // !_PARSER_H
 

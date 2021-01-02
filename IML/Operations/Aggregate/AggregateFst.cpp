@@ -1,8 +1,8 @@
 #include "AggregateFst.h"
 
-double AggregateFst::execute(OperationParam param)
+std::vector<double> AggregateFst::execute(OperationParam param)
 {
-    return param.getArguments().front(); // todo: check if first exists, should have at least 1 el
+    return std::vector<double>{param.getArguments().front()}; // todo: check if first exists, should have at least 1 el
 }
 
 std::string AggregateFst::toString()

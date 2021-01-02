@@ -1,12 +1,12 @@
 #ifndef _AGGREGATE_LST_H
 #define _AGGREGATE_LST_H
 
-#include "../Contracts/IAggregate.h"
+#include "../Contracts/IOperation.h"
 
-class AggregateLst : public IAggregate
+class AggregateLst : public IOperation	
 {
 public:
-	virtual double execute(OperationParam param) override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

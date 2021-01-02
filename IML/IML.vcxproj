@@ -161,10 +161,7 @@
     <ClInclude Include="Operations\Aggregate\AggregateLst.h" />
     <ClInclude Include="Operations\Aggregate\AggregateProd.h" />
     <ClInclude Include="Operations\Aggregate\AggregateSum.h" />
-    <ClInclude Include="Operations\Contracts\IAggregate.h" />
-    <ClInclude Include="Operations\Contracts\IMap.h" />
     <ClInclude Include="Operations\Contracts\IOperation.h" />
-    <ClInclude Include="Operations\Contracts\ISort.h" />
     <ClInclude Include="Operations\Map\MapInc.h" />
     <ClInclude Include="Operations\Map\MapMlt.h" />
     <ClInclude Include="Operations\OperationParam.h" />

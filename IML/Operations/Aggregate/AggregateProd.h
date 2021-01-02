@@ -1,12 +1,12 @@
 #ifndef _AGGREGATE_PROD_H
 #define _AGGREGATE_PROD_H
 
-#include "../Contracts/IAggregate.h"
+#include "../Contracts/IOperation.h"
 
-class AggregateProd : public IAggregate
+class AggregateProd : public IOperation
 {
 public:
-	virtual double execute(OperationParam param) override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

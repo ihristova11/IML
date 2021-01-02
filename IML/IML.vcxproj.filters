@@ -71,18 +71,6 @@
     <ClInclude Include="Utils\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operations\Contracts\IAggregate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations\Contracts\IMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations\Contracts\IOperation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations\Contracts\ISort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Operations\Aggregate\AggregateAvg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -117,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operations\OperationParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations\Contracts\IOperation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

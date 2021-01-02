@@ -1,6 +1,6 @@
 #include "AggregateAvg.h"
 
-double AggregateAvg::execute(OperationParam param)
+std::vector<double> AggregateAvg::execute(OperationParam param)
 {
 	double avg = 0;
 	for (double val : param.getArguments())
@@ -8,7 +8,7 @@ double AggregateAvg::execute(OperationParam param)
 		avg += val;
 	}
 
-	return avg / param.getArguments().size();
+	return std::vector<double>{avg / param.getArguments().size()};
 }
 
 std::string AggregateAvg::toString()

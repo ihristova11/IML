@@ -1,9 +1,9 @@
 #ifndef _SORT_DST_H
 #define _SORT_DST_H
 
-#include "../Contracts/ISort.h"
+#include "../Contracts/IOperation.h"
 
-class SortDst : public ISort
+class SortDst : public IOperation
 {
 public: 
 	virtual std::vector<double> execute(OperationParam param) override;

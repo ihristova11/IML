@@ -1,12 +1,12 @@
 #ifndef _AGGREGATE_AVG_H
 #define _AGGREGATE_AVG_H
 
-#include "../Contracts/IAggregate.h"
+#include "../Contracts/IOperation.h"
 
-class AggregateAvg : public IAggregate
+class AggregateAvg : public IOperation
 {
 public:
-	virtual double execute(OperationParam param) override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

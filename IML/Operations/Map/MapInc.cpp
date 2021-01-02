@@ -5,7 +5,7 @@ std::vector<double> MapInc::execute(OperationParam param)
     std::vector<double> res;
 	for (double val : param.getArguments())
 	{
-		res.push_back(std::stod(param.getAttributes().front()) + val); // convert to double 
+		res.push_back(std::stod(param.getAttributes().front()) + val);
 	}
 
 	return res;

@@ -1,12 +1,12 @@
 #ifndef _AGGREGATE_SUM_H
 #define _AGGREGATE_SUM_H
 
-#include "../Contracts/IAggregate.h"
+#include "../Contracts/IOperation.h"
 
-class AggregateSum : public IAggregate
+class AggregateSum : public IOperation
 {
 public:
-	virtual double execute(OperationParam param) override;
+	virtual std::vector<double> execute(OperationParam param) override;
 
 	virtual std::string toString() override;
 };

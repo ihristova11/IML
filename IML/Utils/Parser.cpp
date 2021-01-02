@@ -1,13 +1,36 @@
 #include "Parser.h"
 #include "Constants.h"
+
+#pragma region include_operations
 #include "../Operations/Contracts/IOperation.h"
+#include "../Operations/OperationParam.h"
+
 #include "../Operations/Map/MapInc.h"
+#include "../Operations/Map/MapMlt.h"
+
+#include "../Operations/Aggregate/AggregateAvg.h"
+#include "../Operations/Aggregate/AggregateFst.h"
+#include "../Operations/Aggregate/AggregateLst.h"
+#include "../Operations/Aggregate/AggregateProd.h"
+#include "../Operations/Aggregate/AggregateSum.h"
+
+#include "../Operations/Sort/SortDst.h"
+#include "../Operations/Sort/SortOrd.h"
+#include "../Operations/Sort/SortRev.h"
+#include "../Operations/Sort/SortSlc.h"
+#pragma endregion include_operations
 
 #include <string>
 #include <vector>
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <stack>
+
+Parser::Parser()
+{
+	seedOperations();
+}
 
 std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 {
@@ -70,29 +93,50 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 
 	//_______________basic file structure is ok
 	//working with last vector, processing the string entries
+
+	std::stack<IOperation*> store;
+	std::string opName;
+	std::vector<std::string> opAttr;
+	std::vector<double> opArgs;
+
 	for (size_t i = 0; i < last.size(); i++)
 	{
-		if (isOpeningOperation(last[i]))
+		if (isOperation(last[i]))
 		{
-			// read attr and args -> 
+			IOperation* op = retrieveOperationFromString(last[i]);
+			store.push(op);
+
+			// clear temp values
+			opName = last[i];
+			opArgs.clear();
+			opAttr.clear();
 		}
 		else if (isClosingOperation(last[i]))
 		{
-			// push to stack and eval operation
-		}
-		else if (isDouble(last[i]))
-		{
-			// put in temp array
+			// check the last one on the stack 
+			IOperation* top = store.top();
+			IOperation* current = retrieveOperationFromString(last[i]);
+			if (top != current)
+			{
+				throw "Not matching tags!";
+			}
+
+			// execute operation
+			top->execute(OperationParam(opName, opArgs, opAttr));
+
+			// update stack with variables
 		}
 		else if (i > 1 && isAttribute(last[i], last[i - 1]))
 		{
-			// starts with "" and ends in "", should be string or a number ()
-			// should depend on the previous command 
-			// not first in the vector, else - throw
+			opAttr.push_back(last[i]);
+		}
+		else if (isDouble(last[i]))
+		{
+			opArgs.push_back(std::stod(last[i]));
 		}
 		else
 		{
-			// throw -> its invalid
+			throw "Invalid syntax!";
 		}
 	}
 	return std::vector<IOperation*>();
@@ -101,6 +145,25 @@ std::vector<IOperation*> Parser::parse(std::ifstream& ifs)
 std::vector<double> Parser::evaluate(std::vector<IOperation*> operations)
 {
 	return std::vector<double>();
+}
+
+IOperation* Parser::retrieveOperationFromString(std::string& str)
+{
+	IOperation* operation = nullptr;
+	for (size_t i = 0; i < operations.size(); i++)
+	{
+		if ((this->operations[i])->toString() == str)
+		{
+			operation = this->operations[i];
+			break;
+		}
+	}
+	return operation;
+}
+
+Parser::~Parser()
+{
+	// todo : dealloc all operations
 }
 
 std::vector<std::string> Parser::split(std::string str, char symbol)
@@ -197,29 +260,11 @@ bool Parser::isAttribute(std::string& str, std::string& op)
 	return false;
 }
 
-bool Parser::isOpeningOperation(std::string& str)
+bool Parser::isOperation(std::string& str)
 {
-	std::vector<std::string> operationNames
+	for (IOperation* op : this->operations)
 	{
-		Constants::AggregateAverageCommandName,
-		Constants::AggregateFirstCommandName,
-		Constants::AggregateLastCommandName,
-		Constants::AggregateProductCommandName,
-		Constants::AggregateSumCommandName,
-
-		Constants::MapIncrementCommandName,
-		Constants::MapMultiplyCommandName,
-
-		Constants::OrderCommandName,
-		Constants::RemoveDuplicatesCommandName,
-		Constants::ReverseCommandName,
-		Constants::SubListCommandName
-	};
-	// valid operation name
-
-	for (std::string op : operationNames)
-	{
-		if (op == str)
+		if (op->toString() == str)
 		{
 			return true;
 		}
@@ -233,9 +278,26 @@ bool Parser::isClosingOperation(std::string& str)
 	if (str.length() > 0)
 	{
 		std::string sub = str.substr(1);
-		return str.front() == '/' && isOpeningOperation(sub);
+		return str.front() == '/' && isOperation(sub);
 	}
 
 	return false;
+}
+
+void Parser::seedOperations()
+{
+	this->operations.push_back(new MapInc());
+	this->operations.push_back(new MapMlt());
+
+	this->operations.push_back(new AggregateAvg());
+	this->operations.push_back(new AggregateFst());
+	this->operations.push_back(new AggregateLst());
+	this->operations.push_back(new AggregateProd());
+	this->operations.push_back(new AggregateSum());
+
+	this->operations.push_back(new SortDst());
+	this->operations.push_back(new SortOrd());
+	this->operations.push_back(new SortRev());
+	this->operations.push_back(new SortSlc());
 }
 

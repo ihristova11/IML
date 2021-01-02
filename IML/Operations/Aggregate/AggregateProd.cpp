@@ -1,6 +1,6 @@
 #include "AggregateProd.h"
 
-double AggregateProd::execute(OperationParam param)
+std::vector<double> AggregateProd::execute(OperationParam param)
 {
 	double prod = 1;
 	for (double val : param.getArguments())
@@ -8,7 +8,7 @@ double AggregateProd::execute(OperationParam param)
 		prod *= val;
 	}
 
-	return prod;
+	return std::vector<double>{prod};
 }
 
 std::string AggregateProd::toString()

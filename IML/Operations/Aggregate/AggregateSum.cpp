@@ -1,6 +1,6 @@
 #include "AggregateSum.h"
 
-double AggregateSum::execute(OperationParam param)
+std::vector<double> AggregateSum::execute(OperationParam param)
 {
 	double sum = 0;
 	for (double val : param.getArguments())
@@ -8,7 +8,7 @@ double AggregateSum::execute(OperationParam param)
 		sum += val;
 	}
 
-	return sum;
+	return std::vector<double>{sum};
 }
 
 std::string AggregateSum::toString()

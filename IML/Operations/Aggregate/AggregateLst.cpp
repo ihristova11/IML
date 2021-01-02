@@ -1,12 +1,12 @@
 #include "AggregateLst.h"
 
-double AggregateLst::execute(OperationParam param)
+std::vector<double> AggregateLst::execute(OperationParam param)
 {
-    return param.getArguments().back();
+	return std::vector<double>{param.getArguments().back()}; // todo: check if no back?
 }
 
 std::string AggregateLst::toString()
 {
-    return std::string();
+	return std::string();
 }
 
