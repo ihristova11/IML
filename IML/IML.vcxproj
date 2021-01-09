@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Parser.cpp" />
     <ClCompile Include="Operations\Aggregate\AggregateAvg.cpp" />
     <ClCompile Include="Operations\Aggregate\AggregateFst.cpp" />
     <ClCompile Include="Operations\Aggregate\AggregateLst.cpp" />
@@ -153,9 +154,9 @@
     <ClCompile Include="Operations\Sort\SortSlc.cpp" />
     <ClCompile Include="Startup.cpp" />
     <ClCompile Include="Utils\Exceptions\SyntaxException.cpp" />
-    <ClCompile Include="Utils\Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Parser.h" />
     <ClInclude Include="Operations\Aggregate\AggregateAvg.h" />
     <ClInclude Include="Operations\Aggregate\AggregateFst.h" />
     <ClInclude Include="Operations\Aggregate\AggregateLst.h" />
@@ -171,7 +172,6 @@
     <ClInclude Include="Operations\Sort\SortSlc.h" />
     <ClInclude Include="Utils\Constants.h" />
     <ClInclude Include="Utils\Exceptions\SyntaxException.h" />
-    <ClInclude Include="Utils\Parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

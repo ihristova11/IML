@@ -1,6 +1,6 @@
 #include "Parser.h"
-#include "Constants.h"
-#include "Exceptions/SyntaxException.h"
+#include "../Utils/Constants.h"
+#include "../Utils/Exceptions/SyntaxException.h"
 
 #pragma region include_operations
 #include "../Operations/Contracts/IOperation.h"
