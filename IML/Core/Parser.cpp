@@ -35,6 +35,11 @@ Parser::Parser()
 
 std::vector<double> Parser::repl(std::ifstream& ifs)
 {
+	if (!ifs)
+	{
+		throw std::invalid_argument("Invalid input file!");
+	}
+
 	std::vector<double> result;
 	std::string temp;
 	std::vector<std::string> openingSplit;
